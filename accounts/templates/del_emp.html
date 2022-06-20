@@ -1,0 +1,45 @@
+ <!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Split DropDown Buttons</title>
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+ <h2>Delete an employee</h2>
+
+
+
+ <div class="btn-group">
+
+ <button type="button" class="btn btn-info">choose employee to be removed</button>
+
+ <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+
+ <span class="caret"></span>
+
+ </button>
+
+ <ul class="dropdown-menu" role="menu">
+     {%for emp in emps %}
+ <li><a href="/del_emp/{{emp.id}}">{{emp.first_name}} {{emp.last_name}} </a></li>
+     {% endfor %}
+
+
+ </ul>
+
+ </div>
+
+</div>
+
+</body>
+</html>
